@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "game-orchestrator"
+version = "0.1.0"
+description = "Testing out llm powered game orcestrator"
+authors = ["LeonCort <you@example.com>"]
+license = "private"
+readme = "README.md"
+# requires-python = ">=3.10" # Temporarily commented out to avoid conflict
+packages = [{include = "game_orchestrator", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+google-generativeai = "^0.8.5"
+pydantic = "^2.11.5"
+typer = {"extras" = ["all"], "version" = "^0.15.4"}
+
+[tool.poetry.scripts]
+game-cli = "game_orchestrator.main:app"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
